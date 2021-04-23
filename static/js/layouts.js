@@ -529,7 +529,28 @@ return `
 
 function layout_27 (links){ 
 return `
-
+<div class="feed-image p-2 px-3 layout-27">
+<a class="square" href="${links[0]}"
+    style="background-image: url('${links[0]}');">
+    <img src="${links[0]}" alt="post-img" class="img-fluid img-responsive" />
+</a>
+<a class="square" href="${links[1]}"
+    style="background-image: url('${links[1]}');">
+    <img src="${links[1]}" alt="post-img" class="img-fluid img-responsive" />
+</a>
+<a class="square square-v-4" href="${links[2]}"
+    style="background-image: url('${links[2]}');">
+    <img src="${links[2]}" alt="post-img" class="img-fluid img-responsive" />
+</a>
+<a class="square square-v-4" href="${links[3]}"
+    style="background-image: url('${links[3]}');">
+    <img src="${links[3]}" alt="post-img" class="img-fluid img-responsive" />
+</a>
+<a class="square square-v-4" href="${links[4]}"
+    style="background-image: url('${links[4]}');">
+    <img src="${links[4]}" alt="post-img" class="img-fluid img-responsive" />
+</a>
+</div>
 `}
 
 function layout_28 (links){ 
