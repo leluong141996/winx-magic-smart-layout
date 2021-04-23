@@ -76,14 +76,24 @@ body {
     width: 50%;
 }
 
+.double-square-8{
+    position: relative;
+    width: 66%!important;
+}
+
 .rectangle-v-4{
     position: relative;
     width: 33%;
 }
 
-.square-v-4{
+.square-4{
     position: relative;
     width: 33%;
+}
+
+.square-8{
+    position: relative;
+    width: 66%;
 }
 
 .rectangle-h-6-4{
@@ -139,6 +149,12 @@ body {
     padding-bottom: 50%;
 }
   
+.double-square-v:after {
+    content: "";
+    display: block;
+    padding-bottom: 200%;
+}
+
 .double-square-v:after {
     content: "";
     display: block;
@@ -507,6 +523,51 @@ body {
     margin-left: var(--double-internal-distance);
 }
 
+.layout-28 a:first-child, .layout-28 a:nth-child(2), .layout-28 a:nth-child(3){
+    width: calc(33.25% - var(--internal-distance));
+}
+
+.layout-28 a:last-child, .layout-28 a:nth-child(4){
+    width: calc(50% - var(--internal-distance));
+    margin-top: var(--double-internal-distance);
+}
+
+.layout-28 a:last-child{
+    margin-left: var(--double-internal-distance);
+}
+
+.layout-28 a:nth-child(2), .layout-28 a:nth-child(3){
+    margin-left: var(--double-internal-distance);
+}
+
+.layout-29 a:nth-child(2), .layout-29 a:nth-child(3), .layout-29 a:last-child{
+    margin-left: var(--double-internal-distance);
+}
+.layout-29 a:nth-child(4), .layout-29 a:nth-child(3), .layout-29 a:last-child{
+    margin-top: var(--double-internal-distance);
+}
+
+.layout-30 a:nth-child(2), .layout-30 a:last-child{
+    margin-left: var(--double-internal-distance);
+    width: calc(66% - var(--double-internal-distance));
+}
+.layout-30 a:nth-child(4), .layout-30 a:nth-child(3){
+    margin-top: var(--double-internal-distance);
+}
+.layout-30 a:nth-child(2)::after{
+    padding-bottom: 101%;
+}
+ .layout-30 a:nth-child(3){
+    margin-top: -33%;
+}
+
+.layout-30 a:nth-child(4){
+    margin-top: var(--double-internal-distance);
+}
+
+.layout-30 a:last-child{
+    margin-top: var(--double-internal-distance);
+}
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary, .btn-primary:hover, .btn-primary.focus, .btn-primary:focus{
     background-color: var(--pink-primary);
@@ -517,10 +578,11 @@ body {
 .dropzone {
     background: white;
     border-radius: 5px;
-    border: 2px dashed rgb(0, 135, 247);
+    border: 1px dashed var(--pink-secondary);
     border-image: none;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0px;
 }
   

@@ -1,7 +1,11 @@
-// if ($('#dropzone').length) {
-//     $("form#dropzone").dropzone({ url: "/file/post" });
-//     // other code here
-//   }
+if ($('#dropzone').length) {
+    $("form#dropzone").dropzone({ 
+        url: "/file/post",
+        addRemoveLinks: true, 
+    
+    });
+    // other code here
+  }
 
 
 // function upload(file) {
@@ -27,9 +31,7 @@
 //     });
 // }
 $(document).ready(function () {
-    console.log(get_layout("layout_1",['static/image/aoKusnD.jpg','static/image/aoKusnD.jpg','static/image/aoKusnD.jpg']))
     $("#preview-layout").html(get_layout("layout_1",['static/image/aoKusnD.jpg','static/image/aoKusnD.jpg','static/image/aoKusnD.jpg']));
-    console.log("done")
 })
 
 function get_layout(layout, links){
