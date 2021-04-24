@@ -70,7 +70,7 @@ def process():
 
             arr_path_sort = sort_image(arr_path_nginx)
             arr_size = []
-            label = 1
+            label = [1]
 
             if len(arr_path_sort) == 2:
                 #process with model for layout 2 image
@@ -106,12 +106,23 @@ def process():
 
                 label = model_layout_4_image.predict([arr_size])
 
-            print("arr_path_nginx: ", arr_path_nginx)
+            if len(arr_path_nginx) > 4:
+                arr_path_nginx = arr_path_nginx[0:4]
+
             print("arr_path_sort: ", arr_path_sort)
             print("label: ", label[0])
             print("total: ", len(arr_path_nginx))
 
             arr_filename = []
+
+            payload = {
+                "list_image_upload": arr_path_nginx,
+                "list_image_process": arr_path_sort,
+                "layout_id": label[0], 
+                "total": len(arr_path_nginx)
+            }
+
+            return render_template('result.html', data_payload=payload)
 
     return render_template('index.html')
 

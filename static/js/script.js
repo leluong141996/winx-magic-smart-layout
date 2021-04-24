@@ -36,6 +36,7 @@ if ($('#dropzone').length) {
 //     });
 // }
 $(document).ready(function () {
+    console.log("script", results)
     layout_icons = [
         {
             img: "static/image/1.png",
@@ -146,14 +147,14 @@ $(document).ready(function () {
             id: 27,
         },
     ]
-    links = [
-        "static/image/aoKusnD.jpg",
-        "static/image/aoKusnD.jpg",
-        "static/image/aoKusnD.jpg",
-        "static/image/aoKusnD.jpg",
-    ]
+    // links = [
+    //     "static/image/aoKusnD.jpg",
+    //     "static/image/aoKusnD.jpg",
+    //     "static/image/aoKusnD.jpg",
+    //     "static/image/aoKusnD.jpg",
+    // ]
 
-    results = load_result()
+    // results = load_result()
 
     for (var i= 0; i < layout_icons.length; i++){
         $(".layout-wrapper").append(`<div class="layout-icon" style="background-image: url('${layout_icons[i].img}');" data-value="${layout_icons[i].id}"></div>`)
@@ -175,21 +176,18 @@ $(document).ready(function () {
 })
 
 function get_layout(layout, links, total_img) {
+    console.log("layout", layout)
     return layout_map[layout].layout(links, total_img, layout_map[layout].size_set)
 }
 
 function set_layout(layout_id, results){
     layout_id = `layout_${layout_id}`
-    $("#preview-layout").html(get_layout(layout_id, results.list_image_upload, 10));
-    $("#preview-layout-2").html(get_layout(layout_id, results.list_image_process, results.list_image_process.length));
+    $("#preview-layout").html(get_layout(layout_id, results.list_image_upload, results.total));
+    $("#preview-layout-2").html(get_layout(layout_id, results.list_image_process, results.total));
     return
 }
 
-function set_default_layout(layout_id, results){
-    layout_id = `layout_${layout_id}`
-    $("#preview-layout").html(get_layout(layout_id, results.list_image_upload, results.list_image_upload.length));
-    return
-}
+
  function load_result(){
     result = {
         "list_image_upload": [
@@ -206,7 +204,8 @@ function set_default_layout(layout_id, results){
           "http://172.16.6.242:9092/mnt/DATACV/famous_people_vn/chipu1.jpg",
           "http://172.16.6.242:9092/mnt/DATACV/famous_people_vn/chipu1.jpg"
         ],
-        "layout_id": 3
+        "layout_id": 3, 
+        "total": 10
       }
     return result
  }
