@@ -162,6 +162,12 @@ $(document).ready(function () {
         $(this).addClass("icon-active")
         set_layout($(this).attr("data-value"), links)
     });
+
+    $(".layout-icon").click(function () {
+        $(".layout-icon").removeClass("icon-active")
+        $(this).addClass("icon-active")
+        set_layout($(this).attr("data-value"), links)
+    });
 })
 
 function get_layout(layout, links) {

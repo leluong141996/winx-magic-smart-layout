@@ -10,6 +10,8 @@
     <link href="static/css/style.css" rel="stylesheet">
     <script src='static/js/layouts.js'></script>
     <script src='static/js/script.js'></script>
+    {{ dropzone.load_css() }}
+    {{ dropzone.style('border: 2px dashed #0087F7; margin: 10%; min-height: 400px;') }}
 </head>
 
 <body>
@@ -1082,21 +1084,26 @@
                     <hr>
                     <div id="preview-layout"></div>
                     <div>
-                        <form action="/file-upload" class="dropzone" id="dropzone">
+                        <!-- <form action="/file-upload" class="dropzone" id="dropzone">
                             <div class="fallback">
                                 <input name="file" type="file" multiple />
                             </div>
-                        </form>
+                        </form> -->
+                        {{ dropzone.create(action='upload') }}
+                        {{ dropzone.load_js() }}
+                        {{ dropzone.config() }}
                     </div>
                     <hr>
                     <div class="layout-wrapper">
                         
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Post</button>
-                </div>
+                <form method="post" action="/process">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" value="Post" name="Post">Post</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
