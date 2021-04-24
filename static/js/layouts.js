@@ -389,7 +389,6 @@ function layout_19(links, len, sizes) {
 <a class="double-square-v" href="${prefix_img}${sizes[1]}/${links[1]}"
     style="background-image: url('${prefix_img}${sizes[1]}/${links[1]}');">
     <img src="${prefix_img}${sizes[1]}/${links[1]}" alt="post-img" class="img-fluid img-responsive" />
-    ${plus(sizes.length, len)}
 </a>
 <a class="rectangle-h-6-4" href="${prefix_img}${sizes[2]}/${links[2]}"
     style="background-image: url('${prefix_img}${sizes[2]}/${links[2]}');">
@@ -398,6 +397,7 @@ function layout_19(links, len, sizes) {
 <a class="rectangle-h-6-4" href="${prefix_img}${sizes[3]}/${links[3]}"
     style="background-image: url('${prefix_img}${sizes[3]}/${links[3]}');">
     <img src="${prefix_img}${sizes[3]}/${links[3]}" alt="post-img" class="img-fluid img-responsive" />
+    ${plus(sizes.length, len)}
 </a>
 </div>
 `}
@@ -417,11 +417,11 @@ function layout_20(links, len, sizes) {
 <a class="rectangle-v-6-4" href="${prefix_img}${sizes[2]}/${links[2]}"
     style="background-image: url('${prefix_img}${sizes[2]}/${links[2]}');">
     <img src="${prefix_img}${sizes[2]}/${links[2]}" alt="post-img" class="img-fluid img-responsive" />
+    ${plus(sizes.length, len)}
 </a>
 <a class="double-square-h" href="${prefix_img}${sizes[3]}/${links[3]}"
     style="background-image: url('${prefix_img}${sizes[3]}/${links[3]}');">
     <img src="${prefix_img}${sizes[3]}/${links[3]}" alt="post-img" class="img-fluid img-responsive" />
-    ${plus(sizes.length, len)}
 </a>
 </div>
 `}
@@ -482,7 +482,6 @@ function layout_23(links, len, sizes) {
 <a class="rectangle-v-8" href="${prefix_img}${sizes[1]}/${links[1]}"
     style="background-image: url('${prefix_img}${sizes[1]}/${links[1]}');">
     <img src="${prefix_img}${sizes[1]}/${links[1]}" alt="post-img" class="img-fluid img-responsive" />
-    ${plus(sizes.length, len)}
 </a>
 <a class="square square-4" href="${prefix_img}${sizes[2]}/${links[2]}"
     style="background-image: url('${prefix_img}${sizes[2]}/${links[2]}');">
@@ -491,6 +490,7 @@ function layout_23(links, len, sizes) {
 <a class="square square-4" href="${prefix_img}${sizes[3]}/${links[3]}"
     style="background-image: url('${prefix_img}${sizes[3]}/${links[3]}');">
     <img src="${prefix_img}${sizes[3]}/${links[3]}" alt="post-img" class="img-fluid img-responsive" />
+    ${plus(sizes.length, len)}
 </a>
 </div>
 `}
@@ -509,11 +509,11 @@ function layout_24(links, len, sizes) {
 <a class="square square-4" href="${prefix_img}${sizes[2]}/${links[2]}"
     style="background-image: url('${prefix_img}${sizes[2]}/${links[2]}');">
     <img src="${prefix_img}${sizes[2]}/${links[2]}" alt="post-img" class="img-fluid img-responsive" />
+    ${plus(sizes.length, len)}
 </a>
 <a class="rectangle-h-8" href="${prefix_img}${sizes[3]}/${links[3]}"
     style="background-image: url('${prefix_img}${sizes[3]}/${links[3]}');">
     <img src="${prefix_img}${sizes[3]}/${links[3]}" alt="post-img" class="img-fluid img-responsive" />
-    ${plus(sizes.length, len)}
 </a>
 </div>
 `}

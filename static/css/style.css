@@ -1,8 +1,8 @@
 :root {
     --pink-primary            : #fd79a8;
     --pink-secondary          : #d9e4f5;
-    --internal-distance       : 1px;
-    --double-internal-distance: 2px;
+    --internal-distance       : 6px;
+    --double-internal-distance: 9px;
 }
 
 body {
@@ -61,6 +61,7 @@ body {
     position           : relative;
     background-position: 50%;
     overflow           : hidden;
+    border-radius: 5px;
 }
 
 .feed-image img {
@@ -271,7 +272,7 @@ body {
 }
 
 .layout-6 a:last-child:after {
-    padding-bottom: 151%;
+    padding-bottom: 154.5%;
 }
 
 .layout-7 a:last-child {
@@ -280,7 +281,7 @@ body {
 }
 
 .layout-7 a:last-child:after {
-    padding-bottom: 303%;
+    padding-bottom: 317.5%;
 }
 
 .layout-8 a:nth-child(2) {
@@ -295,7 +296,7 @@ body {
 }
 
 .layout-8 a:last-child:after {
-    padding-bottom: 101%;
+    padding-bottom: 104%;
 }
 
 .layout-9 a:nth-child(2) {
@@ -468,7 +469,7 @@ body {
 }
 
 .layout-22 a:first-child::after {
-    padding-bottom: 151.9%;
+    padding-bottom: 160%;
 }
 
 .layout-22 a:last-child,
@@ -486,12 +487,12 @@ body {
 }
 
 .layout-23 a:nth-child(3) {
-    margin-top : 33.3%;
+    margin-top: 34.7%;
     margin-left: -99%;
 }
 
 .layout-23 a:nth-child(2)::after {
-    padding-bottom: 152%;
+    padding-bottom: 160%;
 }
 
 .layout-24 a:first-child,
@@ -697,4 +698,8 @@ body {
 
 .icon-active{
     border: 5px solid var(--pink-primary)
+}
+
+.layout-11 .rectangle-h-8-8, .layout-12 .rectangle-h-8-8{
+    width: 65%;
 }
