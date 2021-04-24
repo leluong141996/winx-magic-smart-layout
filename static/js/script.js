@@ -183,11 +183,14 @@ $(document).ready(function () {
     }
     for (var i = 0; i < all_layout_icons.length; i++){
         if ( all_layout_icons[i].max_img == max_img.max_img && all_layout_icons[i].id != results.layout_id) {
-            layout_icons.append(all_layout_icons[i])
+            layout_icons.push(all_layout_icons[i])
         }
     }
     layout_icons = shuffle(layout_icons)
-    [max_img].concat(layout_icons)
+    console.log(max_img)
+    layout_icons = [max_img].concat(layout_icons)
+    console.log(max_img)
+
     // links = [
     //     "static/image/aoKusnD.jpg",
     //     "static/image/aoKusnD.jpg",

@@ -670,6 +670,7 @@ body {
 }
 
 .layout-icon {
+    max-width          : 60px;
     width              : 60px;
     height             : 100%;
     margin-left        : 5px;

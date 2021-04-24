@@ -62,10 +62,11 @@ def process():
     global arr_filename
     if request.method == 'POST':
         if request.form.get('Post') == 'Post':
-            print(arr_filename)
             arr_path_nginx = []
+            total = 0
             for image_name in arr_filename:
-                if len(arr_path_nginx) <= 4:
+                total += 1
+                if len(arr_path_nginx) < 4:
                     arr_path_nginx.append(nginx_http + os.path.join(app.config['UPLOADED_PATH']) + '/' + image_name)
 
             arr_path_sort = sort_image(arr_path_nginx)
@@ -107,11 +108,13 @@ def process():
                 label = model_layout_4_image.predict([arr_size])
 
             if len(arr_path_nginx) > 4:
-                arr_path_nginx = arr_path_nginx[0:4]
+                arr_path_nginx_p = arr_path_nginx[0:4]
+            else:
+                arr_path_nginx_p = arr_path_nginx
 
-            print("arr_path_sort: ", arr_path_sort)
-            print("label: ", label[0])
-            print("total: ", len(arr_path_nginx))
+            # print("arr_path_sort: ", arr_path_sort)
+            # print("label: ", label[0])
+            # print("total: ", total)
 
             arr_filename = []
 
@@ -119,7 +122,7 @@ def process():
                 "list_image_upload": arr_path_nginx,
                 "list_image_process": arr_path_sort,
                 "layout_id": label[0], 
-                "total": len(arr_path_nginx)
+                "total": total
             }
 
             return render_template('result.html', data_payload=payload)
