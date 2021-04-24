@@ -153,14 +153,18 @@ $(document).ready(function () {
         "static/image/aoKusnD.jpg",
     ]
 
+    results = load_result()
+
     for (var i= 0; i < layout_icons.length; i++){
         $(".layout-wrapper").append(`<div class="layout-icon" style="background-image: url('${layout_icons[i].img}');" data-value="${layout_icons[i].id}"></div>`)
     }
 
+    $(`.layout-icon[data-value='${results.layout_id}']`).addClass("icon-active")
+    set_layout(results.layout_id, results)
     $(".layout-icon").click(function () {
         $(".layout-icon").removeClass("icon-active")
         $(this).addClass("icon-active")
-        set_layout($(this).attr("data-value"), links)
+        set_layout($(this).attr("data-value"), results)
     });
 
     $(".layout-icon").click(function () {
@@ -170,12 +174,39 @@ $(document).ready(function () {
     });
 })
 
-function get_layout(layout, links) {
-    return layout_map[layout](links)
+function get_layout(layout, links, total_img) {
+    return layout_map[layout].layout(links, total_img, layout_map[layout].size_set)
 }
 
-function set_layout(layout_id, links){
+function set_layout(layout_id, results){
     layout_id = `layout_${layout_id}`
-    $("#preview-layout").html(get_layout(layout_id, links));
+    $("#preview-layout").html(get_layout(layout_id, results.list_image_upload, 10));
+    $("#preview-layout-2").html(get_layout(layout_id, results.list_image_process, results.list_image_process.length));
     return
 }
+
+function set_default_layout(layout_id, results){
+    layout_id = `layout_${layout_id}`
+    $("#preview-layout").html(get_layout(layout_id, results.list_image_upload, results.list_image_upload.length));
+    return
+}
+ function load_result(){
+    result = {
+        "list_image_upload": [
+          "http://172.16.6.242:9092/mnt/DATACV/famous_people_vn/chipu1.jpg",
+          "http://172.16.6.242:9092/mnt/DATACV/famous_people_vn/chipu1.jpg",
+          "http://172.16.6.242:9092/mnt/DATACV/famous_people_vn/chipu1.jpg",
+          "http://172.16.6.242:9092/mnt/DATACV/famous_people_vn/chipu1.jpg",
+          "http://172.16.6.242:9092/mnt/DATACV/famous_people_vn/chipu1.jpg"
+        ],
+        "list_image_process": [
+          "http://172.16.6.242:9092/mnt/DATACV/famous_people_vn/chipu1.jpg",
+          "http://172.16.6.242:9092/mnt/DATACV/famous_people_vn/chipu1.jpg",
+          "http://172.16.6.242:9092/mnt/DATACV/famous_people_vn/chipu1.jpg",
+          "http://172.16.6.242:9092/mnt/DATACV/famous_people_vn/chipu1.jpg",
+          "http://172.16.6.242:9092/mnt/DATACV/famous_people_vn/chipu1.jpg"
+        ],
+        "layout_id": 3
+      }
+    return result
+ }

@@ -425,12 +425,11 @@ body {
 }
 
 .layout-19 a:last-child {
-    margin-top : -66.5%;
-    margin-left: -50%;
+    margin-top: -33%;
 }
 
 .layout-19 a:nth-child(3) {
-    margin-top: -33%;
+    margin-top: -66.5%;
 }
 
 .layout-20 a:first-child,
